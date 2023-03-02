@@ -58,40 +58,43 @@
 
   <script>
     // element 생성
-    let createAside = document.createElement('aside');
-    const createH1 = document.createElement('h1');
-    const createDiv = document.createElement('div');
-    const createMain = document.createElement('main');
-    const createSection = document.createElement('section');
-    const createUl = document.createElement('ul');
-    const createLi = document.createElement('li');
+    // let createAside = document.createElement('aside');
+    // const createH1 = document.createElement('h1');
+    // const createDiv = document.createElement('div');
+    // const createMain = document.createElement('main');
+    
+    // const createUl = document.createElement('ul');
+    // const createLi = document.createElement('li');
+    // // for(let i=0; i<2; i++) {
+      
+    // //   
+    // // }
 
-    // 속성 및 텍스트 생성
+    // // 속성 및 텍스트 생성
     
    
-    createH1.textContent = "move!";
-    createSection.setAttribute("id","left-sect");
-    // 있다가 for문 돌려야 할 듯?
-    createLi.textContent = "items-$"
+    // createH1.textContent = "move!";
+    // createSection.setAttribute("id","left-sect");
+    // // 있다가 for문 돌려야 할 듯?
+    // createLi.textContent = "items-$"
 
-    // 생성하는 구간
-    createAside.setAttribute("id","move-btn");
-    document.body.appendChild(createAside); 
-    createAside.appendChild(createH1);
-    createDiv.setAttribute("id","root");
-    document.body.appendChild(createDiv);
-    createDiv.appendChild(createMain);
-    createMain.appendChild(createSection);
-    createSection.appendChild(createUl);
-    createUl.appendChild(createLi);
-    createMain.appendChild(createSection);
-    console.dir(createDiv.style);
-    // for(let i=0; i<2; i++) {
+    // // 생성하는 구간
+    // createAside.setAttribute("id","move-btn");
+    // document.body.appendChild(createAside); 
+    // createAside.appendChild(createH1);
+    // createDiv.setAttribute("id","root");
+    // document.body.appendChild(createDiv);
+    // createDiv.appendChild(createMain);
+    
+    // createSection.appendChild(createUl);
+    // createUl.appendChild(createLi);
+    // // console.dir(createDiv.style);
+    // // for(let i=0; i<2; i++) {
 
     // // }
 
 
-    function  StyleData(WID,HEI,BGC,BORDr,POS,BOT,LEF,TRANS){
+    function  StyleData(WID,HEI,BGC,BORDr,POS,BOT,LEF,TRANS,BORD,DIS,JUS,ALIGN){
        let object = {
         widt : WID,
         heigh : HEI,
@@ -100,7 +103,11 @@
         posi : POS,
         botto : BOT,
         lef : LEF,
-        tran : TRANS
+        tran : TRANS,
+        bor : BORD,
+        disp : DIS,
+        jusifyC : JUS,
+        aligI : ALIGN
        }
        return object;
     }
@@ -114,10 +121,37 @@
       element.style.bottom = sty.botto;
       element.style.left = sty.lef;
       element.style.transform = sty.tran;
+      element.style.border = sty.bor;
+      // display
+      element.style.display = sty.disp;
+      element.style.justifyContent = sty.jusifyC;
+      element.style.alignItems = sty.aligI;
+      
     };
-
-    let btnStyle = StyleData("200px","200px","#fff","50%","fixed","10px","50vw","translate(-50%,0)");
+    //styleData에 들어가는 '매개변수'에 맞춰. 순서대로 값을 넣어야 함 실제 css를 적용하는 구간
+    let btnStyle = StyleData("200px","200px","","50%","fixed","10px","50vw","translate(-50%,0)","","flex","center","center");
     styleSelect(createAside,btnStyle);
+
+    let rootStyle = StyleData("500px","100vh","cadetblue","","","","","","","flex","center","center");
+    styleSelect(createDiv,rootStyle);
+
+    let mainStyle = StyleData("500px","500px","","","","","","","1px dotted black","flex","center","center");
+    styleSelect(createMain,mainStyle);
+
+    let sectionStyle = StyleData("","","","","","","","","","flex","center","center");
+    styleSelect(createSection,sectionStyle);
+
+    let ulStyle = StyleData("100%","50px","#fff","","","","","","1px solid black","","","");
+    styleSelect(createUl,ulStyle);
+
+    let liStyle = StyleData("100%","50px","#fff","","","","","","1px solid black","","","");
+    styleSelect(createLi,liStyle);
+    
+
+    
+
+    
+
 
   </script>
 </body>
