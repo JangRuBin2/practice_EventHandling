@@ -7,20 +7,7 @@
   <title>Document</title>
   <style>
     /* reset */
-    #move-btn {
-      width: 200px;
-      height: 200px;
-      background-color: #fff;
-      border-radius: 50%;
-      position: fixed;
-      bottom: 10px;
-      left: 50vw;
-      transform: translate(-50%,0);
-      /* flex set */
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
+   
 
     #root {
       width: 100vw;
@@ -98,37 +85,39 @@
     createSection.appendChild(createUl);
     createUl.appendChild(createLi);
     createMain.appendChild(createSection);
-    console.dir(document);
+    console.dir(createDiv.style);
     // for(let i=0; i<2; i++) {
 
     // // }
 
-    // 아까우니까 css에 활용 할 함수로 재사용하기로...
-    // function elementBox(ASI,H1,DIV,MAIN,SECT,UL,LI){
-    //    let object = {
-    //     asid : ASI,
-    //     hOne : H1,
-    //     divi : DIV,
-    //     mai : MAIN,
-    //     secti : SECT,
-    //     ull : UL,
-    //     lii : LI
-    //    }
-    //    return object;
-    // }
-    
-    // // console.dir(elementBox);
-    // function ElementSelect(area,create) {
-      
-    // };
-    // let area = document.body;
-    // let createEli = elementBox("aside","h1","div","main","section","ul","li");
-    // ElementSelect(element, create);
-    // element.
 
-    // function stleBox() {
+    function  StyleData(WID,HEI,BGC,BORDr,POS,BOT,LEF,TRANS){
+       let object = {
+        widt : WID,
+        heigh : HEI,
+        bgc : BGC,
+        bordR : BORDr,
+        posi : POS,
+        botto : BOT,
+        lef : LEF,
+        tran : TRANS
+       }
+       return object;
+    }
+    // console.dir(StyleBox);
+    function styleSelect(element,sty) {
+      element.style.width = sty.widt;
+      element.style.height = sty.heigh;
+      element.style.backgroundColor = sty.bgc;
+      element.style.borderRadius = sty.bordR;
+      element.style.position = sty.posi;
+      element.style.bottom = sty.botto;
+      element.style.left = sty.lef;
+      element.style.transform = sty.tran;
+    };
 
-    // }
+    let btnStyle = StyleData("200px","200px","#fff","50%","fixed","10px","50vw","translate(-50%,0)");
+    styleSelect(createAside,btnStyle);
 
   </script>
 </body>
