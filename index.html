@@ -19,14 +19,52 @@
   <script>
     const menu = document.getElementById('menu');
     const firstLi = document.querySelector('#menu> li:nth-child(1)');    
-    console.dir(firstLi);
-    console.dir(menu.children);
-    menu.children[0].style.color='red';
-    menu.children[1].style.color='red';
-    menu.children[2].style.color='red';
-    menu.children[3].style.color='red';
-    menu.children[4].style.color='red';
+    // console.dir(firstLi);
+    // console.dir(menu.children);
+    // menu.children[0].style.color='red';
+    // menu.children[1].style.color='red';
+    // menu.children[2].style.color='red';
+    // menu.children[3].style.color='red';
+    // menu.children[4].style.color='red';
     // 이런식으로 무식하게 하다보면 '패턴'이 보인다
+   
+
+    // for(let i=0; i<menu.children.length; i++) {
+      
+    //  };
+    //  위와 같은 노가다 형식을 루프문으로 해결
+     // for(let i=menu.children.length; i>0; i++ ) { }
+    // 이렇게도 루프문 활용 가능!
+
+    // 나 클릭 이벤트 만들어 볼래
+    // menuchildren : 객체 > addEventListener : 메서드네?? 객체 안에 들어가는 함수 이벤트자너! > click는 이벤트를 실행시킬 트리거이고, 그 뒤에오는 함수는 클릭했을 때 실행시킬 함수(콜백 함수)
+
+    //  menu.children[2].addEventListener('click',function(){
+    //   menu.children[0].style.color="cadetblue";
+    //   menu.children[1].style.color="cadetblue";
+    //   menu.children[2].style.color="cadetblue";
+    //   menu.children[3].style.color="cadetblue";
+    //   menu.children[4].style.color="cadetblue";
+    //  })
+
+    // 근데 나는 위처럼 노가다 하기는 싫어 > 이벤트를 for문안에 넣으면 됨~
+    let ddockddak = true;
+     for(let i=0; i<menu.children.length; i++) {
+      menu.children[i].style.color="pink";
+      if(ddockddak === true) {
+        menu.children[i].addEventListener('click',function(){
+          menu.children[i].style.color="yellow";    
+        });
+        // ddockdak을 true에서 false로 만들어서 밑에 실행문으로 넘어감
+        ddockddak = false;
+      }else {
+        menu.children[i].addEventListener('click',function(){
+          menu.children[i].style.color="cadetblue";
+        });
+      }}
+    
+        
+    
   </script>
 </body>
 </html>
