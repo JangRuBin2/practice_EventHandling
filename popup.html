@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    #pop-up {
+      /* fixed의 위치는 무조건 브라우저 기준 */
+      position: fixed;
+      width: 300px;
+      height: 300px;
+      background-color: aqua;
+      top: 100px;
+      left: 100px;
+    }
+    #pop-up > button {
+      width: 100px;
+      height: 100px;
+    }
+    #root {
+      width: 100vw;
+      height: 100vh;
+      background-color: green;
+    }
+    #root > section {
+      width: 100%;
+      height: 100vh;
+      border: 1px solid black ;
+    }
+    #root > section:nth-child(1) {
+      background-color: chocolate;
+    }
+    #root > section:nth-child(2) {
+      background-color: yellow;
+    }
+    #root > section:nth-child(3) {
+      background-color: black;
+    }
+  </style>
+</head>
+<body>
+  <aside id="pop-up">
+    
+    <button>close!</button>
+  </aside>
+  <div id="root">
+    <section></section>
+    <section></section>
+    <section></section>
+  </div>
+  <script>
+    let popUp = document.getElementById('pop-up');
+    let colseButton = popUp.children[0];
+    // console.dir(popUp.children[0].style);
+    // console.dir(colseButton);
+    // 나는 클로즈 버튼을 '클릭'하면 콜백함수를 실행할거야~
+
+    // console.dir(colseButton.parentNode);
+    console.dir(popUp.children[0]);
+    colseButton.addEventListener('click',function() {
+      // colseButton.parentNode.style.display = 'none'; 이처럼 부모를 없애면 자식도 사라짐
+    let p = document.createElement('p');
+    p.textContent = "공욱제 추남";
+    popUp.appendChild(p);  
+   
+    
+    })
+  </script>
+</body>
+</html>
