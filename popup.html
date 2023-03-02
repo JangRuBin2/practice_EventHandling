@@ -61,17 +61,28 @@
     // console.dir(popUp.children[0].style);
     // console.dir(colseButton);
     // 나는 클로즈 버튼을 '클릭'하면 콜백함수를 실행할거야~
-
+    let root = document.getElementById('root');
+    console.dir(root.children[2]);
     // console.dir(colseButton.parentNode);
     console.dir(popUp.children[0]);
     colseButton.addEventListener('click',function() {
-      // colseButton.parentNode.style.display = 'none'; 이처럼 부모를 없애면 자식도 사라짐
-    let p = document.createElement('p');
-    p.textContent = "공욱제 추남";
-    popUp.appendChild(p);  
+      // 부모 노드 display 가 none되면 자식에게도 상속 됩니당
+      colseButton.parentNode.style.display = 'none'; 
+    // let p = document.createElement('p');
+    // p.textContent = "공욱제 추남";
+    // popUp.appendChild(p);  
    
     
     })
+
+    // 세번째 디비전을 클릭하면 popup창이 다시 뜨게 하깅~
+    
+    root.children[2].addEventListener('click', function() {
+      popUp.style.display="inline";
+    })
+    
+
+
   </script>
 </body>
 </html>
