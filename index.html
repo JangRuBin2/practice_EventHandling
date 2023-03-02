@@ -48,21 +48,35 @@
     //  })
 
     // 근데 나는 위처럼 노가다 하기는 싫어 > 이벤트를 for문안에 넣으면 됨~
-    let ddockddak = true;
-     for(let i=0; i<menu.children.length; i++) {
-      menu.children[i].style.color="pink";
-      if(ddockddak === true) {
-        menu.children[i].addEventListener('click',function(){
-          menu.children[i].style.color="yellow";    
-        });
-        // ddockdak을 true에서 false로 만들어서 밑에 실행문으로 넘어감
-        ddockddak = false;
-      }else {
-        menu.children[i].addEventListener('click',function(){
-          menu.children[i].style.color="cadetblue";
-        });
-      }}
-    
+    // let switchValue = true;
+    //  for(let i=0; i<menu.children.length; i++) {
+    //   menu.children[i].style.color="pink";
+    //   if(switchValue === true) {
+    //     menu.children[i].addEventListener('click',function(){
+    //       menu.children[i].style.color="yellow";    
+    //     });
+    //     // ddockdak을 true에서 false로 만들어서 밑에 실행문으로 넘어감
+    //     switchValue = false;
+    //   }else {
+    //     for(let i=0; i<menu.children.length; i++) {
+    //       menu.children[i].style.color="cadetblue";
+    //   }
+    //   switchValue = true;
+    // }}
+
+    // console.dir(menu);
+    let switchValue2 = true;
+    menu.addEventListener('click',function(){
+      for(let i=0; i<menu.children.length; i++) {
+      if(switchValue2===true) {
+        menu.children[i].style.color = "cadetblue";
+      }
+      else
+     {
+      menu.children[i].style.color = "yellow";}
+
+  }
+});
         
     
   </script>
