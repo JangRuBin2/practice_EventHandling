@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+  <script>
+
+const trainingData = {
+      title : "Lorem Ipsum",
+      paragraph : "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsa perferendis, molestiae tenetur omnis magnam sint dignissimos ipsum. Voluptatum sint aut odit? Possimus natus velit aliquam necessitatibus laborum, fuga eum incidunt.",
+      color : ["red","blue"]
+    }
+    console.dir(trainingData);
+    let h1 = document.createElement('h1');
+    h1.textContent = trainingData.title;
+    document.body.appendChild(h1);
+    h1.style.color='blue';
+    let p = document.createElement('p');
+    p.textContent = trainingData.paragraph;
+    document.body.appendChild(p);
+    p.style.color='red';
+
+    p.addEventListener('click', function() {
+      // alert('gk')
+      p.style.backgroundColor = "black";
+      for(let i=0; i<100; i++) {
+        let createD = document.createElement('div');
+        createD.setAttribute("id",i+"번째 div");
+        p.appendChild(createD);
+      }
+    }
+    
+    );
+  </script>
+</body>
+</html>
