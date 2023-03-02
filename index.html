@@ -15,6 +15,18 @@
       <li>items-4</li>
       <li>items-5</li>
     </ul>
-  </div>`
+  </div>
+  <script>
+    const menu = document.getElementById('menu');
+    const firstLi = document.querySelector('#menu> li:nth-child(1)');    
+    console.dir(firstLi);
+    console.dir(menu.children);
+    menu.children[0].style.color='red';
+    menu.children[1].style.color='red';
+    menu.children[2].style.color='red';
+    menu.children[3].style.color='red';
+    menu.children[4].style.color='red';
+    // 이런식으로 무식하게 하다보면 '패턴'이 보인다
+  </script>
 </body>
 </html>
