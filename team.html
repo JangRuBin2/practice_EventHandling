@@ -68,24 +68,39 @@
   </style>
 </head>
 <body>
-  <aside id="move-btn">
-    <h1>move!</h1>
-  </aside>
-  <div id="root">
-    <main>
-      <section id="left-sect">
-        <ul>
-          <li>items-1</li>
-          <li>items-2</li>
-          <li>items-3</li>
-          <li>items-4</li>
-          <li>items-5</li>
-        </ul>
-      </section>
-      <section id="right-sec">
-        <ul></ul>
-      </section>
-    </main>
-  </div>
+
+  <script>
+    // element 생성
+    let createAside = document.createElement('aside');
+    const createH1 = document.createElement('h1');
+    const createDiv = document.createElement('div');
+    const createMain = document.createElement('main');
+    const createSection = document.createElement('section');
+    const createUl = document.createElement('ul');
+    const createLi = document.createElement('li');
+
+    // 속성 및 텍스트 생성
+    
+   
+    createH1.textContent = "move!";
+    createSection.setAttribute("id","left-sect");
+    // 있다가 for문 돌려야 할 듯?
+    createLi.textContent = "items-$"
+
+    // 생성하는 구간
+    createAside.setAttribute("id","move-btn");
+    document.body.appendChild(createAside); 
+    createAside.appendChild(createH1);
+    createDiv.setAttribute("id","root");
+    document.body.appendChild(createDiv);
+    createDiv.appendChild(createMain);
+    createMain.appendChild(createSection);
+    createSection.appendChild(createUl);
+    createUl.appendChild(createLi);
+    createMain.appendChild(createSection);
+    
+    
+    
+  </script>
 </body>
 </html>
